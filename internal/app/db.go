@@ -3,7 +3,6 @@ package app
 import (
 	"fmt"
 
-	"github.com/caclm10/simpletodo-api/internal/config"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -18,12 +17,12 @@ var dbconfig = struct {
 	Username   string
 	Password   string
 }{
-	Connection: config.Viper.GetString("DB_CONNECTION"),
-	Host:       config.Viper.GetString("DB_HOST"),
-	Port:       config.Viper.GetString("DB_PORT"),
-	Database:   config.Viper.GetString("DB_DATABASE"),
-	Username:   config.Viper.GetString("DB_USERNAME"),
-	Password:   config.Viper.GetString("DB_PASSWORD"),
+	Connection: Config.GetString("DB_CONNECTION"),
+	Host:       Config.GetString("DB_HOST"),
+	Port:       Config.GetString("DB_PORT"),
+	Database:   Config.GetString("DB_DATABASE"),
+	Username:   Config.GetString("DB_USERNAME"),
+	Password:   Config.GetString("DB_PASSWORD"),
 }
 
 func ConnectDB() {

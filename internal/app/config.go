@@ -1,4 +1,4 @@
-package config
+package app
 
 import (
 	"os"
@@ -6,9 +6,9 @@ import (
 	"github.com/spf13/viper"
 )
 
-var Viper *viper.Viper
+var Config *viper.Viper
 
-func NewViper() {
+func NewConfig() {
 	root, err := os.Getwd()
 	if err != nil {
 		panic(err)
@@ -23,5 +23,5 @@ func NewViper() {
 		panic(err)
 	}
 
-	Viper = config
+	Config = config
 }

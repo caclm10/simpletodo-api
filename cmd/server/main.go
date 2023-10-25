@@ -4,7 +4,6 @@ import (
 	"net/http"
 
 	"github.com/caclm10/simpletodo-api/internal/app"
-	"github.com/caclm10/simpletodo-api/internal/config"
 	"github.com/labstack/echo/v4"
 )
 
@@ -12,7 +11,7 @@ func main() {
 	// ----------------------------------------------------
 	// Server configuration
 	// ----------------------------------------------------
-	config.NewViper()
+	app.NewConfig()
 	app.ConnectDB()
 
 	// ----------------------------------------------------
