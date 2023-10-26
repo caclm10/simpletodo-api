@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"time"
 
+	"github.com/caclm10/simpletodo-api/internal/model/response"
 	"gorm.io/gorm"
 )
 
@@ -16,6 +17,14 @@ type Todo struct {
 	UpdatedAt *time.Time
 	User      *User
 	Tasks     []Task
+}
+
+func (t Todo) ToResponse() response.TodoResponse {
+	return response.TodoResponse{
+		ID:       t.ID,
+		Name:     t.Name,
+		Sequence: t.Sequence,
+	}
 }
 
 func (t *Todo) BeforeCreate(tx *gorm.DB) error {
