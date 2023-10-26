@@ -1,0 +1,2 @@
+ALTER TABLE tasks DROP FOREIGN KEY tasks_ibfk_1;
+DROP TABLE tasks;

@@ -1,0 +1,2 @@
+ALTER TABLE todos DROP FOREIGN KEY todos_ibfk_1;
+DROP TABLE todos;

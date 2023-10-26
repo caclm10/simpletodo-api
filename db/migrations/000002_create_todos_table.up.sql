@@ -1,0 +1,10 @@
+CREATE TABLE todos (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_id INT UNSIGNED,
+    name VARCHAR(255) NOT NULL,
+    sequence INT UNSIGNED NOT NULL,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP,
+
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
+);

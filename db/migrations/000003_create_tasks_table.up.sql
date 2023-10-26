@@ -1,0 +1,11 @@
+CREATE TABLE tasks (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    todo_id INT UNSIGNED,
+    content TEXT NOT NULL,
+    sequence INT UNSIGNED NOT NULL,
+    completed TINYINT UNSIGNED NOT NULL,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP,
+
+    FOREIGN KEY (todo_id) REFERENCES todos(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
