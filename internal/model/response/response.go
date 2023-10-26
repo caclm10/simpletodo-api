@@ -44,6 +44,10 @@ func NewMessageResponse(code int, msg string) MessageResponse {
 	}
 }
 
+func NewHTTPDefaultResponse(c echo.Context, code int, a any) error {
+	return c.JSON(code, NewDefaultResponse(code, a))
+}
+
 func NewHTTPErrorMessageResponse(code int, err error, msg string) error {
 	message := msg
 
