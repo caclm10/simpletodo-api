@@ -22,6 +22,7 @@ func main() {
 	e := echo.New()
 	e.Validator = validation.NewValidator()
 	e.Use(middleware.Session())
+	e.Use(middleware.CORS())
 
 	e.GET("/", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, echo.Map{"message": "Hello World!"})

@@ -59,7 +59,7 @@ func (s *AuthService) SignUp(c echo.Context, b request.SignUpRequest) (response.
 	return u.ToResponse(), nil
 }
 
-func (s *AuthService) SignIn(c echo.Context, b request.SignUpRequest) (response.UserResponse, error) {
+func (s *AuthService) SignIn(c echo.Context, b request.SignInRequest) (response.UserResponse, error) {
 	ur := response.UserResponse{}
 
 	u, found, err := query.FindUserByEmail(s.db, b.Email)
