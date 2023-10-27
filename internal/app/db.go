@@ -8,8 +8,7 @@ import (
 )
 
 var (
-	DB     *gorm.DB
-	TestDB *gorm.DB
+	DB *gorm.DB
 )
 
 type DBConfig struct {
@@ -62,5 +61,5 @@ func ConnectTestDB() {
 		panic(err)
 	}
 
-	TestDB = db
+	DB = db
 }
