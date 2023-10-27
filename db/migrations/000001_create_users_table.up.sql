@@ -3,7 +3,7 @@ CREATE TABLE users(
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    avatar_url TEXT,
+    picture_url TEXT,
     created_at TIMESTAMP,
     updated_at TIMESTAMP
 );

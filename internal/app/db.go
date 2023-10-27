@@ -63,3 +63,14 @@ func ConnectTestDB() {
 
 	DB = db
 }
+
+func DBRenewTable(n string) error {
+	if err := DB.Exec(fmt.Sprintf("DELETE FROM %s", n)).Error; err != nil {
+		return err
+	}
+
+	if err := DB.Exec(fmt.Sprintf("ALTER TABLE %s AUTO_INCREMENT = 1", n)).Error; err != nil {
+		return err
+	}
+	return nil
+}
